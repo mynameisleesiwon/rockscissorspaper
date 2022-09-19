@@ -3,13 +3,6 @@ import "./App.css";
 import Box from "./Box";
 import { useState } from "react";
 
-// 1. 박스 2개 (타이틀, 사진, 결과)
-// 2. 가위 바위 보 버튼이 있다.
-// 3. 버튼을 클릭하면 클릭한 값이 박스에 보임
-// 4. 컴퓨터는 랜덤하게 아이템 선택
-// 5. 3 4의 결과를 가지고 누가 이겼는지 승패를 따진다.
-// 6. 승패 결과에 따라 테두리 색이 바뀐다(win-초록, lose-빨강, draw-검정)
-
 // 가위바위보
 const choice = {
   rock: {
@@ -52,14 +45,14 @@ function App() {
 
   // 승부 결과
   const judgement = (user, computer) => {
-    if (user.name == computer.name) {
+    if (user.name === computer.name) {
       return "draw";
-    } else if (user.name == "Rock")
-      return computer.name == "Scissors" ? "win" : "lose";
-    else if (user.name == "Scissors")
-      return computer.name == "Paper" ? "win" : "lose";
-    else if (user.name == "Paper")
-      return computer.name == "Rock" ? "win" : "lose";
+    } else if (user.name === "Rock")
+      return computer.name === "Scissors" ? "win" : "lose";
+    else if (user.name === "Scissors")
+      return computer.name === "Paper" ? "win" : "lose";
+    else if (user.name === "Paper")
+      return computer.name === "Rock" ? "win" : "lose";
   };
 
   // 게임 함수
